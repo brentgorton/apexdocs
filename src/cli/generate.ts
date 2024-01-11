@@ -37,10 +37,10 @@ const argv = yargs.options({
     type: 'string',
     alias: 'g',
     default: 'jekyll',
-    choices: ['jekyll', 'docsify', 'plain-markdown', 'openapi'],
+    choices: ['jekyll', 'docsify', 'plain-markdown', 'ngdoc', 'openapi', 'json'],
     describe:
       'Define the static file generator for which the documents will be created. ' +
-      'Currently supports jekyll, docsify, plain markdown, and OpenAPI v3.1.0.',
+      'Currently supports jekyll, docsify, plain markdown, json and OpenAPI v3.1.0.',
   },
   indexOnly: {
     type: 'boolean',

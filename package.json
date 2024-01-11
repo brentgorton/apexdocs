@@ -17,14 +17,16 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
-    "build": "rimraf ./lib && npm run lint && tsc --declaration",
-    "lint": "eslint ./src/**/*.{js,ts} --quiet --fix",
+    "build": "rimraf ./lib && tsc --declaration",
+    "lint": "eslint ./src/**/*.ts --quiet --fix",
     "prepare": "npm run build",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "docs:init": "docsify init docs",
     "docs:serve": "docsify serve docs",
     "execute:example": "rimraf ./docs/types && node lib/cli/generate.js -s examples/force-app -t docs/types --scope global public private protected -g docsify --defaultGroupName \"Misc Group\" --namespace nspc --title \"Sample Documentation\" --documentationRootDir types",
+    "execute:example:json": "rimraf ./docs/types && node lib/cli/generate.js -s ../project-management/sfdx-src/project_cloud -t docs/types --scope global public private protected -g json --defaultGroupName \"Misc Group\" --title \"Sample Documentation\" --documentationRootDir types",
+    "execute:example:ngdoc": "rimraf ./docs/types && node lib/cli/generate.js -s ../project-management/sfdx-src/project_cloud -t docs/types --scope global public private protected -g ngdoc --namespace project_cloud --defaultGroupName \"Misc Group\" --title \"Sample Documentation\" --documentationRootDir types",
     "execute:example:index:only": "node lib/cli/generate.js -s examples/force-app -t docs --scope global public private -g docsify --indexOnly",
     "execute:example:openapi": "node lib/cli/generate.js -s examples/force-app -t docs -g openapi --openApiTitle \"Sample REST Api\" --namespace nspc --openApiFileName restapi"
   },
