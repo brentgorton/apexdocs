@@ -5,8 +5,8 @@ import { truncate } from '../util/string-utils';
 import { Settings } from '../settings';
 
 export class MarkdownHomeFile extends MarkdownFile {
-  constructor(public fileName: string, public types: Type[], headerContent?: string) {
-    super(fileName, '');
+  constructor(public fileName: string, public types: Type[], headerContent?: string, path = '') {
+    super(fileName, path);
     if (headerContent) {
       this.addText(headerContent);
     }
