@@ -1,1 +1,1 @@
-export type GeneratorChoices = 'jekyll' | 'docsify' | 'plain-markdown' | 'openapi';
+export type GeneratorChoices = 'jekyll' | 'docsify' | 'plain-markdown' | 'ngdoc' | 'json' | 'openapi';
